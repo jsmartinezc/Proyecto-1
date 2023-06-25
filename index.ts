@@ -1,4 +1,5 @@
-import express from "express"; //complenet modules
+import { BADFLAGS } from "dns";
+import express from "express"; //complement modules
 
 const app = express(); // the app has been created
 
@@ -7,7 +8,7 @@ app.use(express.json());
 
 interface Customer {
   id: string;
-  cc: string; // is not a int because we don't complete math operations with the numbers
+  cc: string; // is not a Int because we don't execute math operations with this numbers
   name: string;
   email: string;
   birthDate: string;
@@ -15,7 +16,7 @@ interface Customer {
   address: string;
 }
 
-const customersDB: Customer [] = [
+const customersDB: Customer[] = [
   {
     id: "1",
     cc: "1234",
@@ -36,35 +37,42 @@ const customersDB: Customer [] = [
   },
 ];
 
-app.get('/customers', function (request, response) {
-  response.json(customersDB);
-});
+interface Account {
+  accountNumber: string;
+  accountType: string;
+  balance: string;
+}
 
+const accountDB: Account[] = [
+  {
+    accountNumber: "123456789",
+    accountType: "Ahorros",
+    balance: "1000000",
+  },
 
-app.get('/customers/:id', function (request, response) {
-  const id = request.params.id;
-  const result = customersDB.filter(item => item.id === id);
+  {
+    accountNumber: "12345678910",
+    accountType: "Corriente",
+    balance: "500000",
+  },
+];
+
+app.get("/Customer/:accountNumber", function (request, response) {
+  const accountNumber = request.params.accountNumber;
+  const result = accountDB.filter((item) => item.accountNumber === accountNumber);
   response.json(result);
 });
 
-app.post('/customers', function (request, response) {
+app.post("/Customer", function (request, response) {
   const body = request.body;
   customersDB.push(body);
-  response.send('El cliente se ha guardado');
+  response.send("El cliente se ha guardado");
 });
 
-app.put('/customers/:id', function (request, response) {
+app.delete("/Customer/:id", function (request, response) {
   const id = request.params.id;
-  const body = request.body;
-  const customerIndex = customersDB.findIndex(item => item.id === id);
-  customersDB[customerIndex] = body;
-  response.send('Cliente actualizado correctamente');
-});
-
-app.delete('/customers/:id', function (request, response) {
-  const id  = request.params.id;
-  customersDB.filter(item => item.id !== id)
-  response.send('Hola mundo desde delete');
+  customersDB.filter((item) => item.id !== id);
+  response.send("Hola mundo desde delete");
 });
 
 app.listen(PORT, function () {
