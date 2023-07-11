@@ -1,7 +1,7 @@
 import express from 'express';
 
 import customersControllers from './customers.controller';
-import booksControllers from './books.controller';
+import booksControllers from './info.controller';
 
 function routerApi(app: express.Application){
 
