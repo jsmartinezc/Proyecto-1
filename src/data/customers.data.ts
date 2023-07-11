@@ -1,4 +1,4 @@
-import { customersDB } from "../../customersDB";
+import { customersDB } from "../../customersInformation";
 import { Customer } from "../types/customers.types";
 
 let localCustomersDB = customersDB;
