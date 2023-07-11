@@ -7,7 +7,7 @@ import {
   getCustomerByName,
   postCustomer,
   putCustomer,
-  deleteCustomer
+  deleteCustomer,
 } from '../services/customers.service';
 
 const router = express.Router();
@@ -78,11 +78,11 @@ router.put('/:id', async function (req, res) {
 });
 
 
-router.delete('/:id', async function (req, res) {
+router.delete('/:accountNumber', async function (req, res) {
   try{
-    const id = req.params.id;
+    const accountNumber = req.params.accountNumber;
 
-    const response = await deleteCustomer(id);
+    const response = await deleteCustomer(accountNumber);
 
     res.status(response.code).json(response.message);
   }catch(error){

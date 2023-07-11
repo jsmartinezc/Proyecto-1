@@ -6,6 +6,7 @@ interface Customer {
   birthDate: string;
   phone: string;
   address: string;
+  accountNumber: string;
 }
 
 export { Customer };

@@ -9,6 +9,7 @@ const customersDB: Customer[] = [
     birthDate: "1990-01-01",
     phone: "1234567890",
     address: "123 Main St",
+    accountNumber: "123654789"
   },
   {
     id: "2",
@@ -18,6 +19,7 @@ const customersDB: Customer[] = [
     birthDate: "1985-05-10",
     phone: "9876543210",
     address: "456 Elm St",
+    accountNumber: "123654889"
   },
   {
     id: "3",
@@ -27,6 +29,7 @@ const customersDB: Customer[] = [
     birthDate: "1992-12-25",
     phone: "5555555555",
     address: "789 Oak St",
+    accountNumber: "127894789"
   },
   {
     id: "4",
@@ -36,6 +39,7 @@ const customersDB: Customer[] = [
     birthDate: "1988-09-15",
     phone: "2223334444",
     address: "567 Pine St",
+    accountNumber: "1234654789"
   },
   {
     id: "5",
@@ -45,6 +49,7 @@ const customersDB: Customer[] = [
     birthDate: "1995-06-20",
     phone: "9998887777",
     address: "890 Cedar St",
+    accountNumber: "1234898789"
   },
   {
     id: "6",
@@ -54,6 +59,7 @@ const customersDB: Customer[] = [
     birthDate: "1982-03-12",
     phone: "7776665555",
     address: "123 Oak St",
+    accountNumber: "123846789"
   },
   {
     id: "7",
@@ -63,6 +69,7 @@ const customersDB: Customer[] = [
     birthDate: "1993-11-05",
     phone: "4445556666",
     address: "456 Maple St",
+    accountNumber: "123651237"
   },
   {
     id: "8",
@@ -72,6 +79,7 @@ const customersDB: Customer[] = [
     birthDate: "1991-07-30",
     phone: "1112223333",
     address: "789 Elm St",
+    accountNumber: "1236894489"
   },
   {
     id: "9",
@@ -81,6 +89,7 @@ const customersDB: Customer[] = [
     birthDate: "1987-02-18",
     phone: "8889990000",
     address: "012 Oak St",
+    accountNumber: "12365798456"
   },
   {
     id: "10",
@@ -90,6 +99,7 @@ const customersDB: Customer[] = [
     birthDate: "1984-10-08",
     phone: "3334445555",
     address: "345 Maple St",
+    accountNumber: "1236465189"
   },
 ];
 

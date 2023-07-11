@@ -39,7 +39,7 @@ const createCustomer = (body: Customer) => {
   return new Promise((resolve, reject) => {
     try {
       localCustomersDB.push(body);
-      resolve("Se ha agregado cliente");
+      resolve("Customer added");
     } catch (error) {
       reject(error);
     }
