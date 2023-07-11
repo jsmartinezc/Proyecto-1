@@ -64,7 +64,7 @@ const updateCustomer = (id: string, body: Customer) => {
   });
 };
 
-const deleteCustomerById = (id: string) => {
+const deleteCustomerByAccountNumber = (id: string) => {
   return new Promise((resolve, reject) => {
     try {
       const result = localCustomersDB.filter((item) => item.id !== id);
@@ -86,5 +86,5 @@ export {
   readCustomerByName,
   createCustomer,
   updateCustomer,
-  deleteCustomerById,
+  deleteCustomerByAccountNumber,
 };

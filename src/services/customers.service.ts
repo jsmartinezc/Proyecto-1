@@ -2,10 +2,10 @@ import { Customer } from "../types/customers.types";
 import {
   readCustomers,
   readCustomerById,
-  readCustomerByName,
+  readCustomerByAccountNumber,
   createCustomer,
   updateCustomer,
-  deleteCustomerById,
+  deleteCustomerByAccountNumber,
 } from "../data/customers.data";
 
 const getCustomers = (): Promise<{
@@ -42,11 +42,11 @@ const getCustomerById = (
   });
 };
 
-const getCustomerByName = (
+const getCustomerByAccountNumber = (
   name: string
 ): Promise<{ code: number; message: string | Customer }> => {
   return new Promise((resolve, reject) => {
-    readCustomerByName(name)
+    readCustomerByAccountNumber(aacountNumber)
       .then((response) => {
         if ((response as Customer[]).length === 0) {
           resolve({ code: 404, message: 'Customer not found' });
@@ -101,7 +101,7 @@ const deleteCustomer = (
   id: string
 ): Promise<{ code: number; message: string }> => {
   return new Promise((resolve, reject) => {
-    deleteCustomerById(id)
+    deleteCustomerByAccountNumber(id)
       .then((response) => {
         if (response === 200) {
           resolve({ code: 200, message: 'Customer deleted' });
@@ -120,7 +120,7 @@ const deleteCustomer = (
 export {
   getCustomers,
   getCustomerById,
-  getCustomerByName,
+  getCustomerByAccountNumber,
   postCustomer,
   putCustomer,
   deleteCustomer,

@@ -4,7 +4,7 @@ import express from 'express';
 import {
   getCustomers,
   getCustomerById,
-  getCustomerByName,
+  getCustomerByAccountNumber,
   postCustomer,
   putCustomer,
   deleteCustomer,
@@ -41,7 +41,7 @@ router.get('/id/:id', async (req,res) => {
 router.get('/name/:name', async (req,res) => {
   try{
     const name = req.params.name;
-    const response = await getCustomerByName(name);
+    const response = await getCustomerByAccountNumber(name);
     res.status(response.code).json(response.message);
   }catch(error){
     console.log(error);
