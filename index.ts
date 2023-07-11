@@ -10,6 +10,6 @@ app.use(express.json());
 routerApi(app);
 
 app.listen(PORT, function () {
-    console.log("La aplicación es está ejecutando en: http://localhost:" + PORT);
+    console.log(`La aplicación es está ejecutando en: http://localhost: ${PORT}`);
 });
 
