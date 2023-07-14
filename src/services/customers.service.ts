@@ -43,13 +43,13 @@ const getCustomerById = (
 };
 
 const getCustomerByAccountNumber = (
-  name: string
+  accountNumber: string
 ): Promise<{ code: number; message: string | Customer }> => {
   return new Promise((resolve, reject) => {
     readCustomerByAccountNumber(accountNumber)
       .then((response) => {
         if ((response as Customer[]).length === 0) {
-          resolve({ code: 404, message: 'Customer not found' });
+          resolve({ code: 404, message: 'Account not found' });
         } else {
           resolve({ code: 200, message: response as Customer });
         }
